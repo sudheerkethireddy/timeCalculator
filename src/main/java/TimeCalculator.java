@@ -79,10 +79,4 @@ public class TimeCalculator {
 
         return resultingTime.toString();
     }
-
-    public static void main(String[] args) throws NullEmptyException, TimeFormatException {
-        TimeCalculator obj = new TimeCalculator();
-
-        System.out.println(obj.addMinutes("11:39 AM",1520));
-    }
 }
