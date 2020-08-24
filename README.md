@@ -9,7 +9,9 @@ file the logic resides in the method `addMinutes`.
 2. Maven
 
 ## Exception Handling
-As Part of the Prject, I have created two custom classes that extend `Exception` class namely 1)  
+As Part of the Prject, I have created two custom classes that extend `Exception` class namely 
+1) `NullEmptyCheckException`  - This exception handles null or empty input time
+2) `TimeFormatException` - This exception handles if the input time is as per the format mentioned in the doc ``[H]H:MM {AM|PM}``
 
 ## Code coverage
 
