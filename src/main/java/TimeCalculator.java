@@ -1,5 +1,5 @@
 
-import exception.NullEmptyException;
+import exception.NullEmptyCheckException;
 import exception.TimeFormatException;
 
 import static java.util.Objects.isNull;
@@ -14,14 +14,14 @@ public class TimeCalculator {
      * @param time                 - time represented as string in format [H]H:MM {AM|PM}
      * @param minutesToAdd         - signed int that represents number of minutes to be added to the time
      * @return                     - return the resulting time formed as string
-     * @throws NullEmptyException  - if the time string is empty or null
+     * @throws NullEmptyCheckException  - if the time string is empty or null
      * @throws TimeFormatException - if the time string is not in the format ([H]H:MM {AM|PM}
      */
-    public String addMinutes(String time, int minutesToAdd) throws NullEmptyException, TimeFormatException {
+    public String addMinutes(String time, int minutesToAdd) throws NullEmptyCheckException, TimeFormatException {
 
         /* check if the time string is empty or null */
         if(isNull(time) || time.length() == 0) {
-            throw new NullEmptyException("Time String cannot be null or empty");
+            throw new NullEmptyCheckException("Time String cannot be null or empty");
         }
 
         /* check if the input time string is as per the format mentioned in the doc ([H]H:MM {AM|PM})*/

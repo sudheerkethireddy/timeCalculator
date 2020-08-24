@@ -1,10 +1,15 @@
 # timeCalculator
 
-This Repo contains code that adds minutes to the input time and returns the final time.
+This Repo contains code that adds minutes to the input time and returns the final time. The Business Logic of adding minutes to given time
+resides in the `TimeCalculator.java` file. Within the above mentioned
+file the logic resides in the method `addMinutes`. 
 
 ## Requirments Of the System to Run The Project
 1. Java 8
-2. Maven 
+2. Maven
+
+## Exception Handling
+As Part of the Prject, I have created two custom classes that extend `Exception` class namely 1)  
 
 ## Code coverage
 
