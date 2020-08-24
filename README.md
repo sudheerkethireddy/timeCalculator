@@ -1,4 +1,4 @@
-# timeCalculator
+# TimeCalculator
 
 This Repo contains code that adds minutes to the input time and returns the final time. The Business Logic of adding minutes to given time
 resides in the `TimeCalculator.java` file. Within the above mentioned
@@ -8,6 +8,10 @@ file the logic resides in the method `addMinutes`.
 1. Java 8
 2. Maven
 
+## Assumptions made
+When we add minutes to the input time, its assumed that we only output
+the time of the resulting output not the days. Example is If we add 1 day 10 minutes ( 1450 minutes) to 9:40 PM, the output
+shows only the time component which would be 9:50 PM though effectivelys its 9:50 PM of next day. 
 ## Exception Handling
 As Part of the Prject, I have created two custom classes that extend `Exception` class namely 
 1) `NullEmptyCheckException`  - This exception handles null or empty input time
