@@ -20,6 +20,6 @@ As Part of the Prject, I have created two custom classes that extend `Exception`
 ## Code coverage
 
 I have written the unit tests in the test class that covers all the scenarios. The unit
-test coverage stands at 100% for all the classes that are created. Below screenshot shows
+test coverage stands at 100% for all the classes and 91% line coverage. Below screenshot shows
 the same.
 ![Unit Test Coverage](src/main/resources/CodeCoverage_screenshot.png?raw=true )

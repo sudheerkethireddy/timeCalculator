@@ -47,7 +47,6 @@ public class TimeCalculator {
             return formatTimeToString(currentHour, currentHourMinutes + minutesToAdd, meridianIndicator);
         }
         else {
-
             if(meridianIndicator.equalsIgnoreCase("PM")) {
                 currentHour = currentHour+12;
             }
