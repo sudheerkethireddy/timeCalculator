@@ -17,6 +17,10 @@ As Part of the Prject, I have created two custom classes that extend `Exception`
 1) `NullEmptyCheckException`  - This exception handles null or empty input time
 2) `TimeFormatException` - This exception handles if the input time is as per the format mentioned in the doc ``[H]H:MM {AM|PM}``
 
+## How to run the program
+1. Clone the Project into your local repo and run  `mvn clean install`. This will create the executable jar
+2. Now run `java -jar target/AddMinutes-1.0-SNAPSHOT.jar argument1(input time) argument2(minutes to add) eg: java -jar target/AddMinutes-1.0-SNAPSHOT.jar "10:30 AM" 120`
+3. The output will be displayed in the command line argument `eg: 12:30 PM`
 ## Code coverage
 
 I have written the unit tests in the test class that covers all the scenarios. The unit
