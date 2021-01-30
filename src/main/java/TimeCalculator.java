@@ -1,6 +1,7 @@
-
+import exception.NullEmptyCheckException;
 import exception.NullEmptyCheckException;
 import exception.TimeFormatException;
+
 
 import static java.util.Objects.isNull;
 
@@ -8,6 +9,13 @@ public class TimeCalculator {
 
     // variable that holds number of minutes in a day
     private static  final int NUMBER_OF_MINUTES_IN_DAY = 1440;
+
+
+    public static void main(String[] args) throws NullEmptyCheckException, TimeFormatException {
+
+        TimeCalculator obj = new TimeCalculator();
+        System.out.println(obj.addMinutes(args[0], Integer.valueOf(args[1])));
+    }
 
     /**
      * This method adds the minutes to the given time and returns the resulting time back.
@@ -31,26 +39,26 @@ public class TimeCalculator {
         }
 
         // extract the minutes, hour and meridian indicators from the time string
-        int currentMinutes = Integer.valueOf(timeString[0].split(":")[1]);
+        int currentHourMinutes = Integer.valueOf(timeString[0].split(":")[1]);
         int currentHour = Integer.valueOf(timeString[0].split(":")[0]);
         String meridianIndicator = timeString[1];
 
         // if effective minutes after adding the incoming minutes to input is less than 59 than only minutes will change
-        if(minutesToAdd+currentMinutes < 60 && (minutesToAdd+currentMinutes) > 0) {
-            return formatTimeToString(currentHour, currentMinutes + minutesToAdd, meridianIndicator);
+        if(minutesToAdd+currentHourMinutes < 60 && (minutesToAdd+currentHourMinutes) >= 0) {
+            return formatTimeToString(currentHour, currentHourMinutes + minutesToAdd, meridianIndicator);
         }
         else {
 
             if(meridianIndicator.equalsIgnoreCase("PM")) {
                 currentHour = currentHour+12;
             }
-            int totalMinutes = currentHour * 60 + minutesToAdd + currentMinutes;
+            int totalMinutes = currentHour * 60 + minutesToAdd + currentHourMinutes;
             totalMinutes = totalMinutes % NUMBER_OF_MINUTES_IN_DAY;
 
             if(totalMinutes < 60) {  // time is b/w 12:00 AM and 12:59 AM
                 return formatTimeToString(12, totalMinutes, "AM");
             }
-            else if(totalMinutes > 60 && totalMinutes <= 719) { // time is b/w 1:00 AM and 11:59 PM
+            else if(totalMinutes > 60 && totalMinutes <= 719) { // time is b/w 1:00 AM and 11:59 AM
                 return formatTimeToString(totalMinutes / 60, totalMinutes % 60, "AM" );
             }
             else if(totalMinutes >= 720 && totalMinutes < 780) { // time is b/w 12:00 PM and 12:59 PM
