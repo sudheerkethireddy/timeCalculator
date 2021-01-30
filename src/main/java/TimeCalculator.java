@@ -12,7 +12,6 @@ public class TimeCalculator {
 
 
     public static void main(String[] args) throws NullEmptyCheckException, TimeFormatException {
-
         TimeCalculator obj = new TimeCalculator();
         System.out.println(obj.addMinutes(args[0], Integer.valueOf(args[1])));
     }
@@ -84,7 +83,6 @@ public class TimeCalculator {
         resultingTime.append(String.format("%02d", minutes));
         resultingTime.append(" ");
         resultingTime.append(meridianIndicator);
-
         return resultingTime.toString();
     }
 }
